@@ -6,7 +6,7 @@ namespace RE
 	{
 		using func_t = decltype(&BSNonReentrantSpinLock::Lock);
 		static REL::Relocation<func_t> func{ ID::BSNonReentrantSpinLock::Lock };
-		return func(this);
+		func(this);
 	}
 
 	bool BSNonReentrantSpinLock::TryLock()
@@ -25,35 +25,35 @@ namespace RE
 	{
 		using func_t = decltype(&BSReadWriteLock::LockRead);
 		static REL::Relocation<func_t> func{ ID::BSReadWriteLock::LockRead };
-		return func(this);
+		func(this);
 	}
 
 	void BSReadWriteLock::LockWrite()
 	{
 		using func_t = decltype(&BSReadWriteLock::LockWrite);
 		static REL::Relocation<func_t> func{ ID::BSReadWriteLock::LockWrite };
-		return func(this);
+		func(this);
 	}
 
 	void BSReadWriteLock::UnlockRead()
 	{
 		using func_t = decltype(&BSReadWriteLock::UnlockRead);
 		static REL::Relocation<func_t> func{ ID::BSReadWriteLock::UnlockRead };
-		return func(this);
+		func(this);
 	}
 
 	void BSReadWriteLock::UnlockWrite()
 	{
 		using func_t = decltype(&BSReadWriteLock::UnlockWrite);
 		static REL::Relocation<func_t> func{ ID::BSReadWriteLock::UnlockWrite };
-		return func(this);
+		func(this);
 	}
 
 	void BSSpinLock::Lock()
 	{
 		using func_t = decltype(&BSSpinLock::Lock);
 		static REL::Relocation<func_t> func{ ID::BSSpinLock::Lock };
-		return func(this);
+		func(this);
 	}
 
 	bool BSSpinLock::TryLock()
@@ -65,8 +65,14 @@ namespace RE
 
 	void BSSpinLock::Unlock()
 	{
-		using func_t = decltype(&BSSpinLock::Unlock);
+		UnlockImpl(this);
+	}
+
+	void BSSpinLock::UnlockImpl(BSSpinLock* a_lock)
+	{
+		// Bethesda whyyy!?
+		using func_t = void(*)(BSSpinLock**);
 		static REL::Relocation<func_t> func{ ID::BSSpinLock::Unlock };
-		return func(this);
+		func(&a_lock);
 	}
 }

@@ -38,6 +38,9 @@ namespace RE
 		void               Unlock();
 
 	private:
+		static void UnlockImpl(BSSpinLock* a_lock);
+
+	private:
 		// members
 		std::uint32_t          m_owningThread{};  // 0
 		volatile std::uint32_t m_lock{};          // 4
