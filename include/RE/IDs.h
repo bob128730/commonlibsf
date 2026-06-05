@@ -227,14 +227,14 @@ namespace RE::ID
 
 	namespace BSInputEnableLayer
 	{
-		inline constexpr REL::ID SetUserFlags{ 0 };   // 106486
-		inline constexpr REL::ID SetOtherFlags{ 0 };  // 109447
 	}
 
 	namespace BSInputEnableManager
 	{
-		inline constexpr REL::ID CreateLayer{ 0 };  // 179101
-		inline constexpr REL::ID Singleton{ 0 };    // 878792
+		inline constexpr REL::ID AllocateNewLayerImpl{ 124211 };
+		inline constexpr REL::ID EnableUserEvent{ 63121 };
+		inline constexpr REL::ID EnableOtherEvent{ 65852 };
+		inline constexpr REL::ID Singleton{ 938036 };
 	}
 
 	namespace BSInputEventUser
