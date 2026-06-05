@@ -2,7 +2,7 @@
 
 namespace RE
 {
-    enum class USER_EVENT_SENDER_ID : std::uint32_t
+	enum class USER_EVENT_SENDER_ID : std::uint32_t
 	{
 		None = 0,
 		Gameplay = 1,

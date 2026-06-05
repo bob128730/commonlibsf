@@ -71,7 +71,7 @@ namespace RE
 	void BSSpinLock::UnlockImpl(BSSpinLock* a_lock)
 	{
 		// Bethesda whyyy!?
-		using func_t = void(*)(BSSpinLock**);
+		using func_t = void (*)(BSSpinLock**);
 		static REL::Relocation<func_t> func{ ID::BSSpinLock::Unlock };
 		func(&a_lock);
 	}
