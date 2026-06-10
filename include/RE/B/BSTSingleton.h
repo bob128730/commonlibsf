@@ -44,7 +44,8 @@ namespace RE
 	struct BSTSingletonSDM
 	{
 	public:
-		std::uint8_t padding;
+		virtual ~BSTSingletonSDM() = default;
+		std::uint8_t padding[0x8];
 	};
 
 #else
@@ -55,7 +56,10 @@ namespace RE
 	{
 	public:
 		using value_type = T;
+
+		virtual ~BSTSingletonSDM() = default;  // 00
 	};
+	static_assert(sizeof(BSTSingletonSDM<void*>) == 0x10);
 
 #endif
 }
