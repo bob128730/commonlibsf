@@ -42,7 +42,7 @@ namespace RE
 		}
 
 		// members
-		std::byte                        pad010[0x14];                  // 010
+		std::byte                        pad018[0x8];                   // 018
 		std::int32_t                     numberHighActors;              // 020
 		std::int32_t                     numberFullyEnabledHighActors;  // 024
 		std::byte                        pad028[0x1C];                  // 028
