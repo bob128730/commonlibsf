@@ -6,7 +6,7 @@
 namespace RE
 {
 	class Calendar :
-		public BSTSingletonSDM<Calendar>	// 00
+		public BSTSingletonSDM<Calendar>  // 00
 	{
 	public:
 		[[nodiscard]] static auto GetSingleton()

@@ -26,7 +26,7 @@ namespace RE
 	struct TutorialEvent;
 
 	class UI :
-		public BSTSingletonSDM<UI>,							     // 000
+		public BSTSingletonSDM<UI>,                              // 000
 		public BSInputEventReceiver,                             // 010
 		public BSTEventSource<MenuOpenCloseEvent>,               // 020
 		public BSTEventSource<MenuModeChangeEvent>,              // 048
@@ -45,11 +45,11 @@ namespace RE
 		{
 			using Create_t = Scaleform::Ptr<IMenu>*(Scaleform::Ptr<IMenu>*);
 
-			Scaleform::Ptr<IMenu> menu;				// 00
-			Create_t*             initFunc;			// 08
-			void*                 unk10 = nullptr;	// 10
-			uint64_t              unk18 = 1;		// 18
-			uint64_t              unk20 = 0;		// 20
+			Scaleform::Ptr<IMenu> menu;             // 00
+			Create_t*             initFunc;         // 08
+			void*                 unk10 = nullptr;  // 10
+			uint64_t              unk18 = 1;        // 18
+			uint64_t              unk20 = 0;        // 20
 		};
 		static_assert(sizeof(UIMenuEntry) == 0x28);
 
@@ -131,29 +131,29 @@ namespace RE
 			GetEventSource<T>()->UnregisterSink(a_sink);
 		}
 
-		std::uint8_t                    	   	pad188[0x268];  // 188
-		BSTArray<Scaleform::Ptr<IMenu>>        	menuStack;      // 3F0
-		std::uint8_t                           	pad400[0x18];   // 400
-		uint64_t                               	unk418;         // 418
-		uint64_t                               	unk420;         // 420
-		uint64_t                               	unk428;         // 428
-		BSTArray<Scaleform::Ptr<IMenu>>        	menuArray;      // 430
-		BSTArray<Scaleform::Ptr<IMenu>>        	menusToAdvance; // 440
-		std::uint64_t                         	unk450[4];      // 450
-		UIMenuMap                              	menuMap;        // 470
-		std::uint8_t                    	   	pad4A8[0x38];   // 4A8
-		std::uint64_t                   	   	unk4E0;         // 4E0
-		std::uint64_t                   	   	unk4E8;         // 4E8
-		float                           	   	unk4F0;         // 4F0
-		float                           	   	advanceDelta;   // 4F4
-		uint16_t                        	   	unk4F8;         // 4F8
-		bool                            	   	menusVisible;   // 4FA
-		std::uint8_t                    	   	pad4FB[5];      // 4FB
-		std::uint64_t                   	   	unk500;         // 500 
-		std::uint64_t                   	   	unk508;         // 508 
-		std::uint8_t                    		pad510[0x28];   // 510
-		std::uint8_t                    		unk538;         // 538
-		std::uint8_t                    		pad539[7];      // 539
+		std::uint8_t                    pad188[0x268];   // 188
+		BSTArray<Scaleform::Ptr<IMenu>> menuStack;       // 3F0
+		std::uint8_t                    pad400[0x18];    // 400
+		uint64_t                        unk418;          // 418
+		uint64_t                        unk420;          // 420
+		uint64_t                        unk428;          // 428
+		BSTArray<Scaleform::Ptr<IMenu>> menuArray;       // 430
+		BSTArray<Scaleform::Ptr<IMenu>> menusToAdvance;  // 440
+		std::uint64_t                   unk450[4];       // 450
+		UIMenuMap                       menuMap;         // 470
+		std::uint8_t                    pad4A8[0x38];    // 4A8
+		std::uint64_t                   unk4E0;          // 4E0
+		std::uint64_t                   unk4E8;          // 4E8
+		float                           unk4F0;          // 4F0
+		float                           advanceDelta;    // 4F4
+		uint16_t                        unk4F8;          // 4F8
+		bool                            menusVisible;    // 4FA
+		std::uint8_t                    pad4FB[5];       // 4FB
+		std::uint64_t                   unk500;          // 500
+		std::uint64_t                   unk508;          // 508
+		std::uint8_t                    pad510[0x28];    // 510
+		std::uint8_t                    unk538;          // 538
+		std::uint8_t                    pad539[7];       // 539
 	};
 	static_assert(offsetof(UI, menuStack) == 0x3F0);
 	static_assert(offsetof(UI, menuArray) == 0x430);

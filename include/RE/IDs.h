@@ -401,7 +401,7 @@ namespace RE::ID
 
 	namespace Calendar
 	{
-		inline constexpr REL::ID Singleton{ 937673  };
+		inline constexpr REL::ID Singleton{ 937673 };
 	}
 
 	namespace CellAttachDetachEvent
@@ -1170,7 +1170,7 @@ namespace RE::ID
 
 	namespace MenuTopicManager
 	{
-		inline constexpr REL::ID Singleton{ 938421  };
+		inline constexpr REL::ID Singleton{ 938421 };
 	}
 
 	namespace MessageBoxMenu_OnBackOut
@@ -1543,7 +1543,7 @@ namespace RE::ID
 	{
 		inline constexpr REL::ID AreHostileActorsNear{ 0 };  // 154040
 		inline constexpr REL::ID Singleton{ 937584 };
-		inline constexpr REL::ID ToggleAI{ 0 };              // 154056
+		inline constexpr REL::ID ToggleAI{ 0 };  // 154056
 	}
 
 	namespace REFR_LOCK

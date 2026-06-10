@@ -41,7 +41,6 @@ namespace RE
 			static REL::Relocation<func_t> func{ ID::ActorEquipManager::UnequipObject };
 			return func(this, a_actor, a_object, a_slot, a_queueUnequip, a_forceUnequip, a_playSounds, a_applyNow, a_slotBeingReplaced);
 		}
-
 	};
 	static_assert(sizeof(ActorEquipManager) == 0x60);
 }

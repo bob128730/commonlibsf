@@ -104,19 +104,19 @@ namespace RE
 	}
 
 	class GameVM :
-		public BSTSingletonSDM<GameVM>,                                            // 0000
-		public BSScript::IClientVM,                                                // 0010
-		public BSScript::IStackCallbackSaveInterface,                              // 0018
-		public BSTEventSink<BSScript::StatsEvent>,                                 // 0020
-		public BSTEventSink<InputEnableLayerDestroyedEvent>,                       // 0028
-		public BSTEventSink<PositionPlayerEvent>,                                  // 0030
-		public BSTEventSink<TESFormDeleteEvent>,                                   // 0038
-		public BSTEventSink<TESFormIDRemapEvent>,                                  // 0040
-		public BSTEventSink<TESInitScriptEvent>,                                   // 0048
-		public BSTEventSink<TESResolveNPCTemplatesEvent>,                          // 0050
-		public BSTEventSink<TESUniqueIDChangeEvent>,                               // 0058
-		public BSTEventSource<GameScript::StatsEvent>,                             // 0060
-		public BSTEventSource<GameScript::UserLogEvent>,                           // 0088
+		public BSTSingletonSDM<GameVM>,                                           // 0000
+		public BSScript::IClientVM,                                               // 0010
+		public BSScript::IStackCallbackSaveInterface,                             // 0018
+		public BSTEventSink<BSScript::StatsEvent>,                                // 0020
+		public BSTEventSink<InputEnableLayerDestroyedEvent>,                      // 0028
+		public BSTEventSink<PositionPlayerEvent>,                                 // 0030
+		public BSTEventSink<TESFormDeleteEvent>,                                  // 0038
+		public BSTEventSink<TESFormIDRemapEvent>,                                 // 0040
+		public BSTEventSink<TESInitScriptEvent>,                                  // 0048
+		public BSTEventSink<TESResolveNPCTemplatesEvent>,                         // 0050
+		public BSTEventSink<TESUniqueIDChangeEvent>,                              // 0058
+		public BSTEventSource<GameScript::StatsEvent>,                            // 0060
+		public BSTEventSource<GameScript::UserLogEvent>,                          // 0088
 		public BSTEventSink<ModelReferenceEffectEvents::ReferenceEffectFinished>  // 00B0
 	{
 	public:

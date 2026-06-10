@@ -9,8 +9,8 @@ namespace RE
 	struct ConsoleLogAddEvent;
 
 	class __declspec(novtable) ConsoleLog :
-		public BSTSingletonSDM<ConsoleLog>,			// 00
-		public BSTEventSource<ConsoleLogAddEvent>	// 10
+		public BSTSingletonSDM<ConsoleLog>,        // 00
+		public BSTEventSource<ConsoleLogAddEvent>  // 10
 	{
 	public:
 		SF_RTTI_VTABLE(ConsoleLog);
