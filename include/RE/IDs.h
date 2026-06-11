@@ -338,6 +338,12 @@ namespace RE::ID
 		}
 	}
 
+	namespace BSService::TaskQueue
+	{
+		inline constexpr REL::ID Singleton{ 883606 };
+		inline constexpr REL::ID QueueTask{ 100121 };
+	}
+
 	namespace BSSpinLock
 	{
 		inline constexpr REL::ID Lock{ 123819 };
