@@ -1637,7 +1637,7 @@ namespace RE::ID
 
 	namespace SaveLoadEvent
 	{
-		inline constexpr REL::ID GetEventSource{ 0 };  // 129747
+		inline constexpr REL::ID GetEventSource{ 82710 };  // 129747
 	}
 
 	namespace Scaleform
@@ -2295,7 +2295,7 @@ namespace RE::ID
 
 	namespace TESLoadGameEvent
 	{
-		inline constexpr REL::ID GetEventSource{ 0 };  // 1868757
+		inline constexpr REL::ID GetEventSource{ 64149 };  // 1868757
 	}
 
 	namespace TESLockChangedEvent
