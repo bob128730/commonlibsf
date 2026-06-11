@@ -37,9 +37,9 @@ namespace RE::ID
 
 	namespace ActorEquipManager
 	{
-		inline constexpr REL::ID Singleton{ 938503 };  // 879425
-		inline constexpr REL::ID EquipObject{ 0 };     // 151991 -> TODO: Verify 101949 in 1.15
-		inline constexpr REL::ID UnequipObject{ 0 };   // 152007 -> TODO: Verify 101951 in 1.15
+		inline constexpr REL::ID Singleton{ 938503 };      // 879425
+		inline constexpr REL::ID EquipObject{ 101949 };    // 151991
+		inline constexpr REL::ID UnequipObject{ 101951 };  // 152007
 	}
 
 	namespace ActorCellChangeEvent::Event
@@ -336,6 +336,12 @@ namespace RE::ID
 				}
 			}
 		}
+	}
+
+	namespace BSService::TaskQueue
+	{
+		inline constexpr REL::ID Singleton{ 883606 };
+		inline constexpr REL::ID QueueTask{ 100121 };
 	}
 
 	namespace BSSpinLock
@@ -1631,7 +1637,7 @@ namespace RE::ID
 
 	namespace SaveLoadEvent
 	{
-		inline constexpr REL::ID GetEventSource{ 0 };  // 129747
+		inline constexpr REL::ID GetEventSource{ 82710 };  // 129747
 	}
 
 	namespace Scaleform
@@ -2289,7 +2295,7 @@ namespace RE::ID
 
 	namespace TESLoadGameEvent
 	{
-		inline constexpr REL::ID GetEventSource{ 0 };  // 1868757
+		inline constexpr REL::ID GetEventSource{ 64149 };  // 1868757
 	}
 
 	namespace TESLockChangedEvent
