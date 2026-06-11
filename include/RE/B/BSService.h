@@ -17,12 +17,12 @@ namespace RE
 				delete this;
 			}
 
-			virtual void Unk02() {}                              // 02
-			virtual void Unk03() {}                              // 03
+			virtual void  Unk02() {}                                // 02
+			virtual void  Unk03() {}                                // 03
 			virtual void* GetProfilerContext() { return nullptr; }  // 04
-			virtual void Unk05() {}                              // 05
-			virtual void Unk06() {}                              // 06
-			virtual void Unk07() {}                              // 07
+			virtual void  Unk05() {}                                // 05
+			virtual void  Unk06() {}                                // 06
+			virtual void  Unk07() {}                                // 07
 
 			virtual void Run() = 0;
 
@@ -41,12 +41,12 @@ namespace RE
 			}
 
 			// members
-			mutable volatile std::uint32_t refCount{ 1 };        // 08
-			std::uint32_t                  pad0C{ 0 };           // 0C
-			std::byte                      pad10[0x18]{};        // 10
-			BSReadWriteLock                lock;                 // 28
-			const void*                    profilerCategory{};   // 30
-			std::byte                      pad38[0xE8]{};        // 38
+			mutable volatile std::uint32_t refCount{ 1 };       // 08
+			std::uint32_t                  pad0C{ 0 };          // 0C
+			std::byte                      pad10[0x18]{};       // 10
+			BSReadWriteLock                lock;                // 28
+			const void*                    profilerCategory{};  // 30
+			std::byte                      pad38[0xE8]{};       // 38
 		};
 		static_assert(offsetof(QueuedDelegate, refCount) == 0x08);
 		static_assert(offsetof(QueuedDelegate, lock) == 0x28);
