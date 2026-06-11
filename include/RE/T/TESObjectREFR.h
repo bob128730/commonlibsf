@@ -11,7 +11,7 @@
 #include "RE/E/ExtraDataList.h"
 #include "RE/I/IAnimationGraphManagerHolder.h"
 #include "RE/I/IKeywordFormBase.h"
-#include "RE/I/IMovementInterface.h"
+#include "RE/I/IMovementProcessMessageInterface.h"
 #include "RE/I/IPostAnimationChannelUpdateFunctor.h"
 #include "RE/N/NiPoint.h"
 #include "RE/N/NiSmartPointer.h"
@@ -97,17 +97,6 @@ namespace RE
 		kConsumingIngredient
 	};
 
-	class IMovementProcessMessageInterface :
-		public IMovementInterface  // 00
-	{
-	public:
-		~IMovementProcessMessageInterface() override;
-
-		// add
-		virtual void Unk_01();  // 01
-	};
-	static_assert(sizeof(IMovementProcessMessageInterface) == 0x8);
-
 	struct OBJ_REFR
 	{
 	public:
@@ -134,15 +123,15 @@ namespace RE
 
 	class TESObjectREFR :
 		public TESHandleForm,                                                    // 00
-		public BSTEventSink<BSTransformDeltaEvent>,                              // 30
-		public IMovementProcessMessageInterface,                                 // 38
-		public IPostAnimationChannelUpdateFunctor,                               // 40
-		public BSTEventSink<BSAnimationGraphEvent>,                              // 48
-		public BSTEventSink<BGSInventoryListEvent::Event>,                       // 50
-		public IAnimationGraphManagerHolder,                                     // 58
-		public IKeywordFormBase,                                                 // 60
-		public ActorValueOwner,                                                  // 68
-		public BSTEventSourceLazyInit<ActorValueEvents::ActorValueChangedEvent>  // 70
+		public BSTEventSink<BSTransformDeltaEvent>,                              // 38
+		public IMovementProcessMessageInterface,                                 // 40
+		public IPostAnimationChannelUpdateFunctor,                               // 48
+		public BSTEventSink<BSAnimationGraphEvent>,                              // 50
+		public BSTEventSink<BGSInventoryListEvent::Event>,                       // 58
+		public IAnimationGraphManagerHolder,                                     // 60
+		public IKeywordFormBase,                                                 // 68
+		public ActorValueOwner,                                                  // 70
+		public BSTEventSourceLazyInit<ActorValueEvents::ActorValueChangedEvent>  // 78
 	{
 	public:
 		SF_RTTI_VTABLE(TESObjectREFR);

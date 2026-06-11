@@ -1165,7 +1165,9 @@ namespace RE::ID
 		inline constexpr REL::ID GetSingleton{ 35721 };
 		inline constexpr REL::ID Allocate{ 123792 };
 		inline constexpr REL::ID Free{ 123793 };
-		inline constexpr REL::ID GetThreadScrapHeap{ 0 };  // 36848
+		// 1.16.242: no standalone GetThreadScrapHeap exists; the TLS getter is inlined engine-wide
+		inline constexpr REL::ID CreateThreadScrapHeap{ 123806 };
+		inline constexpr REL::ID ScrapHeapTlsIndex{ 952578 };
 	}
 
 	namespace MenuTopicManager
@@ -1218,6 +1220,12 @@ namespace RE::ID
 	namespace MissionMenu_RejectQuest
 	{
 		inline constexpr REL::ID GetEventSource{ 0 };  // 139097
+	}
+
+	namespace MovementControllerNPC
+	{
+		inline constexpr REL::ID SetAnimationDriven{ 135316 };
+		inline constexpr REL::ID SetMotionDriven{ 135315 };
 	}
 
 	namespace MissionMenu_ShowItemLocation

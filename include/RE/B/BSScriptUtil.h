@@ -773,7 +773,7 @@ namespace RE::BSScript
 	[[nodiscard]] T UnpackVariable(const Variable& a_var)
 	{
 		if (!a_var.is<Array>()) {
-			assert(false);
+			assert(a_var.GetType().IsArray());
 			return T();
 		}
 
@@ -797,10 +797,16 @@ namespace RE::BSScript
 	{
 		if (a_var.is<std::nullptr_t>()) {
 			return T();
-		} else {
-			using value_type = typename T::value_type;
-			return T(detail::UnpackVariable<value_type>(a_var));
 		}
+
+		if constexpr (detail::array<typename T::value_type>) {
+			if (a_var.GetType().IsArray() && !a_var.is<Array>()) {
+				return T();
+			}
+		}
+
+		using value_type = typename T::value_type;
+		return T(detail::UnpackVariable<value_type>(a_var));
 	}
 
 	namespace detail
