@@ -1,5 +1,6 @@
 #pragma once
 
+#include "RE/B/BGSAnimationPathImplementation.h"
 #include "RE/B/BSIntrusiveRefCounted.h"
 #include "RE/B/BSLock.h"
 #include "RE/B/BSTEvent.h"
@@ -7,7 +8,6 @@
 
 namespace RE
 {
-	class BGSAnimationPathImplementation;
 	class BSAnimationGraphEvent;
 	class BSFadeNode;
 	struct BSMovementDataChangedEvent;
@@ -79,6 +79,11 @@ namespace RE
 	{
 	public:
 		virtual ~AnimationManager();
+
+		[[nodiscard]] TESObjectREFR* GetTargetReference() const
+		{
+			return animationPath ? animationPath->reference : nullptr;
+		}
 
 		// members
 		std::byte                           unkA8[0x218];       // A8
