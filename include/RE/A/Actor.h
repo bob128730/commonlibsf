@@ -285,6 +285,15 @@ namespace RE
 		virtual void         Unk_1A0();                                                                              // 1A0
 		virtual void         Unk_1A1();                                                                              // 1A1
 
+		// adds the item to the inventory first if the actor doesn't have it (ActorEquipManager::EquipObject does nothing in that case); 
+		// what Papyrus Actor.EquipItem calls
+		void EquipItem(TESBoundObject* a_object, bool a_preventRemoval = false, bool a_silent = false)
+		{
+			using func_t = decltype(&Actor::EquipItem);
+			static REL::Relocation<func_t> func{ ID::Actor::EquipItem };
+			func(this, a_object, a_preventRemoval, a_silent);
+		}
+
 		void EvaluatePackage(bool a_immediate = false, bool a_resetAI = false)
 		{
 			using func_t = decltype(&Actor::EvaluatePackage);

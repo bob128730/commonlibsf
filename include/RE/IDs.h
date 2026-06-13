@@ -14,6 +14,7 @@ namespace RE::ID
 
 	namespace Actor
 	{
+		inline constexpr REL::ID EquipItem{ 101349 };
 		inline constexpr REL::ID EvaluatePackage{ 0 };    // 150640
 		inline constexpr REL::ID GetActorKnowledge{ 0 };  // 150669
 		inline constexpr REL::ID IsHostileToActor{ 0 };   // 150777
@@ -1855,7 +1856,7 @@ namespace RE::ID
 
 	namespace ShowHUDMessageEvent
 	{
-		inline constexpr REL::ID GetEventSource{ 0 };  // 133512
+		inline constexpr REL::ID GetEventSource{ 86800 };
 	}
 
 	namespace ShowingQuestMarketTextEvent
