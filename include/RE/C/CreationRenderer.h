@@ -1,9 +1,8 @@
 #pragma once
 
-struct ID3D12Device;
-struct ID3D12CommandQueue;
-struct IDXGIFactory2;
-struct IDXGIAdapter;
+#include "REX/W32/D3D12.h"
+#include "REX/W32/DXGI.h"
+#include "REX/W32/DXGI_2.h"
 
 namespace RE::CreationRendererPrivate
 {
@@ -25,12 +24,12 @@ namespace RE::CreationRendererPrivate
 			return *singleton;
 		}
 
-		[[nodiscard]] ID3D12Device* GetDevice() const;
+		[[nodiscard]] REX::W32::ID3D12Device* GetDevice() const;
 
-		[[nodiscard]] ID3D12CommandQueue* GetGraphicsQueue() const;
+		[[nodiscard]] REX::W32::ID3D12CommandQueue* GetGraphicsQueue() const;
 
-		[[nodiscard]] IDXGIFactory2* GetDXGIFactory() const;
-		[[nodiscard]] IDXGIAdapter*  GetAdapter() const;
+		[[nodiscard]] REX::W32::IDXGIFactory2* GetDXGIFactory() const;
+		[[nodiscard]] REX::W32::IDXGIAdapter*  GetAdapter() const;
 
 		// members
 		std::byte            pad00[0x28];       // 00
@@ -42,10 +41,10 @@ namespace RE::CreationRendererPrivate
 
 	struct DeviceProperties
 	{
-		std::byte      pad000[0x408];  // 000
-		IDXGIFactory2* dxgiFactory;    // 408 (pDXGIFactory)
-		IDXGIAdapter*  dxActiveGPU;    // 410 (pDxActiveGPU)aaaaa
-		ID3D12Device*  dxDevice;       // 418 (pDxDevice)
+		std::byte                pad000[0x408];  // 000
+		REX::W32::IDXGIFactory2* dxgiFactory;    // 408 (pDXGIFactory)
+		REX::W32::IDXGIAdapter*  dxActiveGPU;    // 410 (pDxActiveGPU)
+		REX::W32::ID3D12Device*  dxDevice;       // 418 (pDxDevice)
 	};
 	static_assert(offsetof(DeviceProperties, dxgiFactory) == 0x408);
 	static_assert(offsetof(DeviceProperties, dxActiveGPU) == 0x410);
@@ -62,18 +61,18 @@ namespace RE::CreationRendererPrivate
 
 		struct QueueOwnerB
 		{
-			std::byte           pad00[0x60];    // 00
-			ID3D12CommandQueue* graphicsQueue;  // 60 (pgraphicsQueue)
+			std::byte                     pad00[0x60];    // 00
+			REX::W32::ID3D12CommandQueue* graphicsQueue;  // 60 (pgraphicsQueue)
 		};
 		static_assert(offsetof(QueueOwnerB, graphicsQueue) == 0x60);
 	}
 
-	inline ID3D12Device* Renderer::GetDevice() const
+	inline REX::W32::ID3D12Device* Renderer::GetDevice() const
 	{
 		return deviceProperties ? deviceProperties->dxDevice : nullptr;
 	}
 
-	inline ID3D12CommandQueue* Renderer::GetGraphicsQueue() const
+	inline REX::W32::ID3D12CommandQueue* Renderer::GetGraphicsQueue() const
 	{
 		if (!queueOwnerA || !queueOwnerA->inner) {
 			return nullptr;
@@ -81,12 +80,12 @@ namespace RE::CreationRendererPrivate
 		return queueOwnerA->inner->graphicsQueue;
 	}
 
-	inline IDXGIFactory2* Renderer::GetDXGIFactory() const
+	inline REX::W32::IDXGIFactory2* Renderer::GetDXGIFactory() const
 	{
 		return deviceProperties ? deviceProperties->dxgiFactory : nullptr;
 	}
 
-	inline IDXGIAdapter* Renderer::GetAdapter() const
+	inline REX::W32::IDXGIAdapter* Renderer::GetAdapter() const
 	{
 		return deviceProperties ? deviceProperties->dxActiveGPU : nullptr;
 	}
