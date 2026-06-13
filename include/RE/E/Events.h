@@ -2625,13 +2625,43 @@ namespace RE
 
 	struct SaveLoadEvent
 	{
+		enum class OpType : std::uint8_t
+		{
+			kAutosave = 1,
+			kLoadMostRecent = 2,
+			kQuicksave = 3,
+			kQuickload = 4,
+			kManualSave = 5,
+			kLoad = 6,
+			kExitSaveToMainMenu = 7,
+			kExitSaveToDesktop = 8,
+			kLoadNamedFile = 0xB,
+		};
+
+		enum class Status : std::uint8_t
+		{
+			kBegin = 0,
+			kLoadSucceeded = 1,
+			kFailed = 3,
+			kSaveCompleted = 4,
+			kLoadDispatchRefused = 5,
+		};
+
 		[[nodiscard]] static BSTEventSource<SaveLoadEvent>* GetEventSource()
 		{
 			using func_t = decltype(&SaveLoadEvent::GetEventSource);
 			static REL::Relocation<func_t> func{ ID::SaveLoadEvent::GetEventSource };
 			return func();
 		}
+
+		// members
+		std::uint32_t elapsedMs;      // 00
+		std::uint32_t fileSizeBytes;  // 04
+		std::uint32_t unk08;          // 08
+		OpType        opType;         // 0C
+		Status        status;         // 0D
 	};
+	static_assert(sizeof(SaveLoadEvent) == 0x10);
 
 	struct SecurityMenu_BackOutKey
 	{
