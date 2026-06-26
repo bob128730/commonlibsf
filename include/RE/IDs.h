@@ -278,7 +278,7 @@ namespace RE::ID
 
 	namespace BSPointerHandleManagerInterface
 	{
-		inline constexpr REL::ID GetSmartPointer{ 0 };  // 72432
+		inline constexpr REL::ID GetSmartPointer{ 35638 };
 	}
 
 	namespace BSReadWriteLock
