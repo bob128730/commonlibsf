@@ -926,6 +926,14 @@ namespace RE::ID
 		inline constexpr REL::ID GetForForm{ 47393 };  // generic form-component lookup helper
 	}
 
+	namespace FreeCameraInputContext
+	{
+		inline constexpr REL::ID Manager{ 938003 };
+		inline constexpr REL::ID Descriptor{ 894502 };
+		inline constexpr REL::ID PushContext{ 124144 };
+		inline constexpr REL::ID PopContext{ 124143 };
+	}
+
 	namespace GameMenuBase
 	{
 		inline constexpr REL::ID ctor{ 0 };   // 130577
@@ -1457,7 +1465,8 @@ namespace RE::ID
 		inline constexpr REL::ID Singleton{ 937788 };
 		inline constexpr REL::ID ForceFirstPerson{ 113397 };
 		inline constexpr REL::ID ForceThirdPerson{ 113398 };
-		inline constexpr REL::ID SetCameraState{ 0 };  // 166078
+		inline constexpr REL::ID SetCameraState{ 113375 };
+		inline constexpr REL::ID ToggleFreeCameraMode{ 113409 };
 		inline constexpr REL::ID QCameraEquals{ 0 };   // 166081
 	}
 
