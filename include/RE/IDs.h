@@ -963,7 +963,7 @@ namespace RE::ID
 
 	namespace HideSubtitleEvent::Event
 	{
-		inline constexpr REL::ID GetEventSource{ 0 };  // 133630
+		inline constexpr REL::ID GetEventSource{ 86875 };
 	}
 
 	namespace HourPassed::Event
@@ -1888,7 +1888,7 @@ namespace RE::ID
 
 	namespace ShowSubtitleEvent::Event
 	{
-		inline constexpr REL::ID GetEventSource{ 0 };  // 133631
+		inline constexpr REL::ID GetEventSource{ 86874 };
 	}
 
 	namespace SkillsMenu_Accept
