@@ -278,7 +278,7 @@ namespace RE::ID
 
 	namespace BSPointerHandleManagerInterface
 	{
-		inline constexpr REL::ID GetSmartPointer{ 0 };  // 72432
+		inline constexpr REL::ID GetSmartPointer{ 35638 };
 	}
 
 	namespace BSReadWriteLock
@@ -926,6 +926,14 @@ namespace RE::ID
 		inline constexpr REL::ID GetForForm{ 47393 };  // generic form-component lookup helper
 	}
 
+	namespace FreeCameraInputContext
+	{
+		inline constexpr REL::ID Manager{ 938003 };
+		inline constexpr REL::ID Descriptor{ 894502 };
+		inline constexpr REL::ID PushContext{ 124144 };
+		inline constexpr REL::ID PopContext{ 124143 };
+	}
+
 	namespace GameMenuBase
 	{
 		inline constexpr REL::ID ctor{ 0 };   // 130577
@@ -963,7 +971,7 @@ namespace RE::ID
 
 	namespace HideSubtitleEvent::Event
 	{
-		inline constexpr REL::ID GetEventSource{ 0 };  // 133630
+		inline constexpr REL::ID GetEventSource{ 86875 };
 	}
 
 	namespace HourPassed::Event
@@ -1457,7 +1465,8 @@ namespace RE::ID
 		inline constexpr REL::ID Singleton{ 937788 };
 		inline constexpr REL::ID ForceFirstPerson{ 113397 };
 		inline constexpr REL::ID ForceThirdPerson{ 113398 };
-		inline constexpr REL::ID SetCameraState{ 0 };  // 166078
+		inline constexpr REL::ID SetCameraState{ 113375 };
+		inline constexpr REL::ID ToggleFreeCameraMode{ 113409 };
 		inline constexpr REL::ID QCameraEquals{ 0 };   // 166081
 	}
 
@@ -1888,7 +1897,7 @@ namespace RE::ID
 
 	namespace ShowSubtitleEvent::Event
 	{
-		inline constexpr REL::ID GetEventSource{ 0 };  // 133631
+		inline constexpr REL::ID GetEventSource{ 86874 };
 	}
 
 	namespace SkillsMenu_Accept

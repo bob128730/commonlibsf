@@ -51,11 +51,12 @@ namespace RE
 	public:
 		~BSTEventSource() override = default;  // 00
 
-		void Notify(void* a_event)
+		void Notify(const Event& a_event)
 		{
-			using func_t = decltype(&BSTEventSource::Notify);
+			NotifyVisitor visitor{ &a_event, this };
+			using func_t = void (*)(BSTEventSource*, void*);
 			static REL::Relocation<func_t> func{ ID::BSTEventSource::Notify };
-			return func(this, a_event);
+			func(this, &visitor);
 		}
 
 		void RegisterSink(BSTEventSink<Event>* a_sink)
@@ -78,6 +79,25 @@ namespace RE
 		std::uint32_t                 unk1C;  // 1C
 		std::uint32_t                 unk20;  // 20
 		std::uint32_t                 unk24;  // 24
+
+	private:
+		struct NotifyVisitor
+		{
+			NotifyVisitor(const Event* a_event, BSTEventSource* a_source) noexcept : event(a_event), source(a_source) {}
+
+			virtual ~NotifyVisitor() = default;  // 00
+			virtual void Unk01() {}  // 01
+
+			virtual BSEventNotifyControl Invoke(BSTEventDetail::SinkBase* a_sink)  // 02
+			{
+				return static_cast<BSTEventSink<Event>*>(a_sink)->ProcessEvent(*event, source);
+			}
+
+			// members
+			const Event*    event;   // 08
+			BSTEventSource* source;  // 10
+		};
+
 	};
 	static_assert(sizeof(BSTEventSource<void*>) == 0x28);
 

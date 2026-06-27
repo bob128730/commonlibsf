@@ -3034,7 +3034,12 @@ namespace RE
 				static REL::Relocation<func_t> func{ ID::ShowSubtitleEvent::Event::GetEventSource };
 				return func();
 			}
+
+			const char* subtitleText{ nullptr };  // 00 
+			const char* speakerName{ nullptr };   // 08
+			bool        isPlayer{ false };        // 10
 		};
+		static_assert(sizeof(Event) == 0x18);
 	};
 
 	struct SkillsMenu_Accept

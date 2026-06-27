@@ -136,9 +136,10 @@ namespace RE
 	public:
 		static bool GetSmartPointer(const BSPointerHandle<T>& a_in, NiPointer<T>& a_out)
 		{
-			using func_t = bool (*)(const BSPointerHandle<T>& a_in, NiPointer<T>& a_out);
+			using func_t = NiPointer<T>& (*)(NiPointer<T>& a_out, const BSPointerHandle<T>& a_in);
 			static REL::Relocation<func_t> func{ ID::BSPointerHandleManagerInterface::GetSmartPointer };
-			return func(a_in, a_out);
+			func(a_out, a_in);
+			return static_cast<bool>(a_out);
 		}
 
 		static NiPointer<T> GetSmartPointer(const BSPointerHandle<T>& a_in)
