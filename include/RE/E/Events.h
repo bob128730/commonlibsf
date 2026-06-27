@@ -3035,7 +3035,7 @@ namespace RE
 				return func();
 			}
 
-			const char* subtitleText{ nullptr };  // 00 
+			const char* subtitleText{ nullptr };  // 00
 			const char* speakerName{ nullptr };   // 08
 			bool        isPlayer{ false };        // 10
 		};

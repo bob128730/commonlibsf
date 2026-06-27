@@ -83,10 +83,11 @@ namespace RE
 	private:
 		struct NotifyVisitor
 		{
-			NotifyVisitor(const Event* a_event, BSTEventSource* a_source) noexcept : event(a_event), source(a_source) {}
+			NotifyVisitor(const Event* a_event, BSTEventSource* a_source) noexcept :
+				event(a_event), source(a_source) {}
 
 			virtual ~NotifyVisitor() = default;  // 00
-			virtual void Unk01() {}  // 01
+			virtual void Unk01() {}              // 01
 
 			virtual BSEventNotifyControl Invoke(BSTEventDetail::SinkBase* a_sink)  // 02
 			{
@@ -97,7 +98,6 @@ namespace RE
 			const Event*    event;   // 08
 			BSTEventSource* source;  // 10
 		};
-
 	};
 	static_assert(sizeof(BSTEventSource<void*>) == 0x28);
 

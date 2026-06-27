@@ -1467,7 +1467,7 @@ namespace RE::ID
 		inline constexpr REL::ID ForceThirdPerson{ 113398 };
 		inline constexpr REL::ID SetCameraState{ 113375 };
 		inline constexpr REL::ID ToggleFreeCameraMode{ 113409 };
-		inline constexpr REL::ID QCameraEquals{ 0 };   // 166081
+		inline constexpr REL::ID QCameraEquals{ 0 };  // 166081
 	}
 
 	namespace PlayerCharacter
