@@ -3082,7 +3082,7 @@ namespace RE
 				static REL::Relocation<func_t> func{ ID::Spaceship::TakeOffEvent::GetEventSource };
 				return func();
 			}
-			
+
 			NiPointer<TESObjectREFR> ship;
 			std::uint32_t            state;
 		};

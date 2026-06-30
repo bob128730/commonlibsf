@@ -2378,7 +2378,7 @@ namespace RE::ID
 		inline constexpr REL::ID GetSpaceship{ 119881 };
 		inline constexpr REL::ID GetSpaceshipParentDock{ 0 };  // 174134
 		inline constexpr REL::ID GetSpaceshipPilot{ 119876 };
-		inline constexpr REL::ID GetValue{ 0 };                // 107605
+		inline constexpr REL::ID GetValue{ 0 };  // 107605
 		inline constexpr REL::ID HasKeyword{ 42794 };
 		inline constexpr REL::ID IsCrimeToActivate{ 0 };  // 106755
 		inline constexpr REL::ID IsInSpace{ 63482 };
