@@ -225,7 +225,7 @@ namespace RE::ID
 
 	namespace BooksRead::Event
 	{
-		inline constexpr REL::ID GetEventSource{ 0 };  // 103540
+		inline constexpr REL::ID GetEventSource{ 61274 };
 	}
 
 	namespace Bounty::Event
@@ -1226,7 +1226,11 @@ namespace RE::ID
 	{
 		inline constexpr REL::ID DebugNotification{ 0 };        // 138728
 		inline constexpr REL::ID LookupReferenceByHandle{ 0 };  // 72986
-		inline constexpr REL::ID PlayMenuSound{ 0 };            // 167344
+		inline constexpr REL::ID PlayMenuSound{ 84314 };           // slot dispatcher  1.16.244.0 @ 0x13C2B70
+		inline constexpr REL::ID PlayMenuSoundFn{ 114459 };        // audio play call  1.16.244.0 @ 0x1EE6460
+		inline constexpr REL::ID PlayMenuSoundIntern{ 1186742 };   // BSFixedString::Get  0x28CBA80
+		inline constexpr REL::ID PlayMenuSoundRelease{ 139340 };   // BSFixedString release  0x28CAEA0
+		inline constexpr REL::ID PlayMenuSoundCtx{ 392439 };       // PTR_144af4430  0x4AF4430
 	}
 
 	namespace MissionBoard_MissionEntryChanged
@@ -2229,7 +2233,7 @@ namespace RE::ID
 
 	namespace TESBookReadEvent
 	{
-		inline constexpr REL::ID GetEventSource{ 0 };  // 107141
+		inline constexpr REL::ID GetEventSource{ 64108 };
 	}
 
 	namespace TESCellFullyLoadedEvent
