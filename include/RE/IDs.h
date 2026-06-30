@@ -225,7 +225,7 @@ namespace RE::ID
 
 	namespace BooksRead::Event
 	{
-		inline constexpr REL::ID GetEventSource{ 0 };  // 103540
+		inline constexpr REL::ID GetEventSource{ 61274 };
 	}
 
 	namespace Bounty::Event
@@ -2229,7 +2229,7 @@ namespace RE::ID
 
 	namespace TESBookReadEvent
 	{
-		inline constexpr REL::ID GetEventSource{ 0 };  // 107141
+		inline constexpr REL::ID GetEventSource{ 64108 };
 	}
 
 	namespace TESCellFullyLoadedEvent
