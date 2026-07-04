@@ -45,13 +45,13 @@ namespace RE
 		}
 
 		// members
-		std::byte      pad010[216];    // 010
-		TESObjectCELL* interiorCell;   // 0E8
-		std::byte      pad0F0[80];     // 0F0
-		Sky*           sky;            // 140
-		std::byte      pad148[64];     // 148
-		TESWorldSpace* worldSpace;     // 188
-		void*          unk190;         // 190
+		std::byte      pad010[216];   // 010
+		TESObjectCELL* interiorCell;  // 0E8
+		std::byte      pad0F0[80];    // 0F0
+		Sky*           sky;           // 140
+		std::byte      pad148[64];    // 148
+		TESWorldSpace* worldSpace;    // 188
+		void*          unk190;        // 190
 	};
 	static_assert(offsetof(TES, sky) == 0x140);
 	static_assert(offsetof(TES, interiorCell) == 0xE8);
