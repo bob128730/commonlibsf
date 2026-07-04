@@ -12,6 +12,7 @@ namespace RE
 	class Sky;
 	class TESActorBase;
 	class TESObjectCELL;
+	class TESWorldSpace;
 
 	struct PositionPlayerEvent;
 
@@ -44,11 +45,14 @@ namespace RE
 		}
 
 		// members
-		std::byte      pad010[0x18];  // 010
-		Sky*           sky;           // 028
-		std::byte      pad030[0xB8];  // 030
-		TESObjectCELL* interiorCell;  // 0E8
+		std::byte      pad010[216];    // 010
+		TESObjectCELL* interiorCell;   // 0E8
+		std::byte      pad0F0[80];     // 0F0
+		Sky*           sky;            // 140
+		std::byte      pad148[64];     // 148
+		TESWorldSpace* worldSpace;     // 188
+		void*          unk190;         // 190
 	};
-	static_assert(offsetof(TES, sky) == 0x28);
+	static_assert(offsetof(TES, sky) == 0x140);
 	static_assert(offsetof(TES, interiorCell) == 0xE8);
 }

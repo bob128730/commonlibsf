@@ -2207,7 +2207,7 @@ namespace RE::ID
 	namespace TES
 	{
 		inline constexpr REL::ID GetDeadCount{ 0 };  // 84704
-		inline constexpr REL::ID Singleton{ 0 };     // 881024
+		inline constexpr REL::ID Singleton{ 883589 };  // 881024
 	}
 
 	namespace TESActivateEvent
