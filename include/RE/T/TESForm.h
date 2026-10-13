@@ -48,6 +48,7 @@ namespace RE
 			kDeleted = 1 << 5,
 			kPersistent = 1 << 10,
 			kDisabled = 1 << 11,
+			kTemporary = 1 << 14,
 		};
 
 		~TESForm() override;  // 00
