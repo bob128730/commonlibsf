@@ -30,7 +30,6 @@ namespace RE
 		virtual ~Sky();  // 00
 
 		// members
-		std::byte						  pad[13];				// 0B
 		uint32_t						  planetID;             // 18
 		std::byte						  pad1C[252];           // 1C
 		BGSWeatherSettingsForm*           currentWeather;       // 118
